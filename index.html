@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Bootstrap -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Hangman!</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand">Hangman!</a>
+    </div>
+  </nav>
+
+  <div class="container top-buffer">
+
+    <!-- Game -->
+    <div class="col-md-4 col-md-offset-4">
+       <canvas width="350px" height="350px" id="canvas">Please use a modern browser.</canvas>
+    </div>
+    
+    <div class="col-md-4 col-md-offset-4 text-center">
+      <!-- Alert -->
+      <div id="myAlert" class="alert alert-danger text-center " role="alert" data-alert="alert">
+        <p>Test</p>
+      </div>
+      <div id="blanks"></div>
+
+      <form id="guess-form" method="post">
+        <input id="guess" style="text-align:center" name="guess" type="text" autocomplete="off" maxlength="1" autofocus>
+        <button type="submit" class="btn">Guess</button>
+      </form>
+
+      <h2>Letters Guessed: <span id="letterboard"><!-- Guessed --></span></h2>
+      <h2>Rounds Won: <span id="won"><!-- Num Incorrect --></span></h2>
+      <h2>Rounds Lost: <span id="lost"><!-- Num Incorrect --></span></h2>
+
+      <p>This game is hard! It can use any word in the dictionary. Good luck!</p>
+    </div>
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="endModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="endModalLabel"></h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" id="new-round-button" data-dismiss="modal">New Round</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="main.bundle.js" charset="utf-8"></script>
+</body>
+</html>
